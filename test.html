@@ -32,8 +32,7 @@
     --text-dark: #2d3748;
     --text-light: #718096;
     --amazon-color: #FF9900;
-    --audible-color: #e96e00; /* Audible orange */
-
+    --audible-color: #e96e00; 
 }
 html {
     scroll-behavior: smooth;
@@ -44,52 +43,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
-    /* Pulsanti con icona */
-.btn-with-icon {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-}
-
-.btn-with-icon svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-}
-
-.btn-amazon {
-    background: var(--amazon-color);
-    color: #111;
-}
-.btn-amazon:hover {
-    background: #ffaa33;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 153, 0, 0.4);
-}
-
-.btn-audible {
-    background: var(--audible-color);
-    color: #fff;
-}
-.btn-audible:hover {
-    background: #d15a00;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(233, 110, 0, 0.4);
-}
-
-/* Responsive: impila i pulsanti su mobile */
-@media (max-width: 480px) {
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    .btn-with-icon {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
 /* Navigation */
 nav {
     position: fixed;
@@ -828,7 +781,36 @@ footer {
         font-size: 1rem;
         padding-left: 1.5rem;
     }
+    .btn-with-icon {
+        width: 100%;
+        justify-content: center;
+    }
 }
+
+    
+/* ← AGGIUNGI QUESTI STILI */
+.btn-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+}
+.btn-with-icon svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+.btn-audible {
+    background: var(--audible-color);
+    color: #fff;
+}
+.btn-audible:hover {
+    background: #d15a00;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(233, 110, 0, 0.4);
+}
+
+
 </style>
 </head>
 <body>
@@ -861,28 +843,12 @@ footer {
 Il Parkinson nella mia vita, tra una mezzanotte e l'altra.<br>
 Una storia che racconta quanto sia importante alzare lo sguardo<br>
 per non arrendersi mai.
+</p>
 <div class="hero-buttons">
-    <!-- Pulsante Amazon -->
-    <a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="btn btn-amazon btn-with-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path fill="#111" d="M13.952 19.654c-.406.406-1.07.443-1.476.074l-.037-.037c-2.04-1.695-2.403-2.478-3.546-4.092-.406-.554-.997-.48-1.22-.185l-.037.074c-.48.665-.111 1.922 1.034 3.247 1.145 1.325 2.621 2.174 3.983 2.174.517 0 1.034-.148 1.44-.443.628-.443.665-1.182.222-1.81l-.037-.037c-.148-.222-.296-.333-.443-.443-.48-.37-.96-.296-1.256.074l-.037.037c-.148.185-.074.443.111.628.222.185.48.296.776.296.406 0 .739-.333.739-.739 0-.406-.333-.739-.739-.739-.148 0-.296.037-.406.111-.111.074-.185.185-.185.333 0 .148.074.259.185.333.111.074.259.111.406.111.222 0 .406-.185.406-.406s-.185-.406-.406-.406c-.074 0-.148.037-.222.074-.074.037-.111.111-.111.185 0 .074.037.148.111.185.074.037.148.074.222.074.111 0 .222-.111.222-.222s-.111-.222-.222-.222h-.037c-.037 0-.074.037-.074.074s.037.074.074.074h.037c.037 0 .074-.037.074-.074s-.037-.074-.074-.074zm-3.36-5.538c.037-.037.074-.037.111 0 .037.037.037.074 0 .111l-.037.037c-.037.037-.074.037-.111 0-.037-.037-.037-.074 0-.111l.037-.037zm1.81-1.108c.037-.037.074-.037.111 0 .037.037.037.074 0 .111l-.037.037c-.037.037-.074.037-.111 0-.037-.037-.037-.074 0-.111l.037-.037z"/>
-            <path fill="#111" d="M21.893 13.733c-.222.259-.554.296-.813.074-.739-.628-.887-.923-1.293-1.514-.739-1.071-1.773-1.736-2.881-1.736-.296 0-.591.037-.887.148-.443.148-.813.406-1.071.776-.259.37-.37.813-.296 1.256.111.739.665 1.367 1.477 1.662.813.296 1.736.185 2.438-.296.333-.222.406-.665.185-.997-.222-.333-.665-.406-.997-.185-.37.259-.85.333-1.256.185-.406-.148-.665-.48-.739-.887-.037-.259.037-.517.222-.702.185-.185.443-.296.702-.259.554.037 1.108.406 1.514.997.406.591.665 1.034 1.551 1.773.739.628 1.699.443 2.327-.296.628-.739.443-1.699-.296-2.327-.37-.333-.628-.702-.776-1.108-.148-.406-.148-.85 0-1.256.148-.406.406-.739.739-.997.333-.259.739-.406 1.145-.406.739 0 1.403.443 1.699 1.108.148.37.554.554.923.406.37-.148.554-.554.406-.923-.517-1.256-1.736-2.069-3.062-2.069-.739 0-1.477.222-2.105.628-.628.406-1.108.997-1.403 1.699-.296.702-.37 1.477-.185 2.216.185.739.591 1.403 1.145 1.92.554.517 1.256.85 1.994.96.739.111 1.477-.037 2.105-.406.628-.37 1.145-.923 1.477-1.588.333-.665.443-1.403.333-2.105-.111-.702-.443-1.33-.96-1.81-.517-.48-1.182-.776-1.884-.85-.702-.074-1.403.074-2.031.406-.628.333-1.145.85-1.477 1.477-.333.628-.443 1.33-.333 2.031.111.702.443 1.33.96 1.81.517.48 1.182.776 1.884.85.702.074 1.403-.074 2.031-.406.628-.333 1.145-.85 1.477-1.477.185-.37.037-.813-.333-.997-.37-.185-.813-.037-.997.333z"/>
-        </svg>
-        Acquista su Amazon
-    </a>
-    
-    <!-- Pulsante Audible -->
-    <a href="https://www.audible.it/pd/B0GY975RJP?qid=1777014505&sr=1-1&ref_pageloadid=not_applicable&pf_rd_p=67f8f22b-aed1-45a6-a456-d09beff03315&pf_rd_r=MDTJW2D78ARR76GQGJQW&plink=8AO6UHjsuPVoficf&pageLoadId=mnUFZfU3GTWdo6zc&creativeId=b2592cc9-1111-40d9-9474-98f67c8075cc&ref=a_search_c3_lProduct_1_1" target="_blank" class="btn btn-audible btn-with-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path fill="#fff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9V9h2v8zm4 0h-2V9h2v8z"/>
-            <path fill="#fff" d="M12 4a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
-            <circle fill="#fff" cx="12" cy="12" r="3"/>
-        </svg>
-        Acquista su Audible
-    </a>
+<a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="btn btn-amazon">Acquista su Amazon</a>
+<a href="#contatti" class="btn btn-outline">Contatta l'Autore</a>
 </div>
-    </div>
-    
+</div>
 <div class="hero-image fade-in">
 <img src="libro.png" alt="Copertina del libro Un Nuovo Giorno" class="book-cover">
 </div>
@@ -972,15 +938,8 @@ della felicità.
 </p>
 </div>
 </div>
-<div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-    <a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="btn btn-amazon btn-with-icon fade-in">
-        <!-- SVG Amazon qui -->
-        Acquista su Amazon
-    </a>
-    <a href="https://www.audible.it/pd/B0GY975RJP..." target="_blank" class="btn btn-audible btn-with-icon fade-in">
-        <!-- SVG Audible qui -->
-        Acquista su Audible
-    </a>
+<div style="text-align: center; margin-top: 3rem;">
+<a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="btn btn-amazon fade-in">Acquista Ora su Amazon</a>
 </div>
 </div>
 </section>
@@ -1093,16 +1052,7 @@ non risiedono in una condizione di vita senza problemi, ma sono già presenti de
 <p class="cta-text">
 Scopri la storia di Davide e trova ispirazione per trasformare le tue difficoltà in opportunità di crescita.
 </p>
-<!--div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;"-->
-    <a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="btn btn-amazon btn-with-icon fade-in">
-        <!-- SVG Amazon qui -->
-        Acquista su Amazon
-    </a>
-    <a href="https://www.audible.it/pd/B0GY975RJP..." target="_blank" class="btn btn-audible btn-with-icon fade-in">
-        <!-- SVG Audible qui -->
-        Acquista su Audible
-    </a>
-
+<a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="cta-btn">Acquista su Amazon</a>
 </div>
 </section>
 <!-- Contact Section -->
