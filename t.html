@@ -1,16 +1,1168 @@
-<!-- Amazon -->
-<a href="..." class="btn btn-amazon btn-with-icon">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path fill="#111" d="M16.5 8.5c-.7 1.6-2.1 2.5-3.8 2.5-2.4 0-4.2-1.8-4.2-4.2 0-.8.2-1.5.6-2.1-.6.2-1.2.6-1.7 1.1C6.2 7.3 5.5 9 5.5 11c0 3.3 2.7 6 6 6s6-2.7 6-6c0-.8-.2-1.5-.4-2.2z"/>
-  </svg>
-  Acquista su Amazon
-</a>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-975405222"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!-- Audible -->
-<a href="..." class="btn btn-audible btn-with-icon">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path fill="#fff" d="M5 12h2l5 5V7l-5 5H5zm6 0h2l5 5V7l-5 5h-2z"/>
-    <path fill="#fff" d="M3 9v6h2l5-5-5-5H3zm14 0v6h2l5-5-5-5h-2z"/>
-  </svg>
-  Acquista su Audible
+  gtag('config', 'AW-975405222');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un Nuovo Giorno - Davide Ferrero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #1a365d;
+    --secondary-color: #2c5282;
+    --accent-color: #f6ad55;
+    --warm-gold: #d69e2e;
+    --light-bg: #f7fafc;
+    --white: #ffffff;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+    --amazon-color: #FF9900;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+nav.scrolled {
+    padding: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.98);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+}
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #4299e1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='2' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E");
+    background-size: 50px 50px;
+    animation: float 20s infinite linear;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50px); }
+}
+.hero-content {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.hero-text {
+    color: var(--white);
+}
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+.hero-author {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+.btn:hover {
+    background: var(--warm-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(246, 173, 85, 0.4);
+}
+.btn-amazon {
+    background: var(--amazon-color);
+    color: #111;
+}
+.btn-amazon:hover {
+    background: #ffaa33;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 153, 0, 0.4);
+}
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    margin-left: 1rem;
+}
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.book-cover {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+    transform: rotateY(-10deg);
+    transition: transform 0.5s ease;
+}
+.book-cover:hover {
+    transform: rotateY(0deg) scale(1.02);
+}
+/* About Author Section */
+.about-author {
+    padding: 6rem 2rem;
+    background: var(--light-bg);
+}
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+.author-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.author-image-container {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.author-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+.author-image-container:hover .author-image {
+    transform: scale(1.05);
+}
+.author-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.author-details {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+.author-details li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+}
+.author-details li::before {
+    content: '✦';
+    color: var(--accent-color);
+}
+.author-bio {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+/* Book Content Section */
+.book-content {
+    padding: 6rem 2rem;
+    background: var(--white);
+}
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.content-card {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent-color);
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+.content-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.content-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+/* Quotes Section */
+.quotes-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+.quotes-section .section-title,
+.quotes-section .section-subtitle {
+    color: var(--white);
+}
+.quotes-section .section-subtitle {
+    opacity: 0.9;
+}
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.quote-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+.quote-card:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-5px);
+}
+.quote-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 2rem;
+    word-wrap: break-word;
+}
+.quote-text::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-size: 3rem;
+    color: var(--accent-color);
+    font-family: 'Playfair Display', serif;
+}
+.quote-author {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+.quote-source {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.3rem;
+}
+/* Target Readers Section */
+.target-readers {
+    padding: 6rem 2rem;
+    background: var(--light-bg);
+}
+.readers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.reader-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.reader-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+.reader-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-color), var(--warm-gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+.reader-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.reader-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+/* Testimonial Section */
+.testimonial {
+    padding: 6rem 2rem;
+    background: var(--white);
+}
+.testimonial-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, var(--light-bg), var(--white));
+    padding: 3rem;
+    border-radius: 20px;
+    border: 2px solid var(--accent-color);
+}
+.testimonial-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+.testimonial-author {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+.testimonial-role {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+/* CTA Section */
+.cta-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--amazon-color), #ffaa33);
+    text-align: center;
+}
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 1rem;
+}
+.cta-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+.cta-btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: #111;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+/* Contact Section */
+.contact {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+.contact .section-title,
+.contact .section-subtitle {
+    color: var(--white);
+}
+.contact-container {
+    max-width: 600px;
+    margin: 3rem auto 0;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.9);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+.form-control:focus {
+    outline: none;
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(246, 173, 85, 0.5);
+}
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.submit-btn:hover {
+    background: var(--warm-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(246, 173, 85, 0.4);
+}
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.footer-text {
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.social-links a {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.social-links a svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: fill 0.3s ease;
+}
+.social-links a:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+}
+.social-links a:hover svg {
+    fill: var(--primary-color);
+}
+.copyright {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 2rem;
+}
+/* Scroll To Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.scroll-to-top:hover {
+    background: var(--warm-gold);
+    transform: translateY(-5px);
+}
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Responsive Design */
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-image {
+        order: -1;
+    }
+    .book-cover {
+        max-width: 300px;
+    }
+    .author-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .author-image-container {
+        max-width: 300px;
+        height: 300px;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .mobile-menu-btn {
+        display: flex;
+    }
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+    .content-card {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .hero {
+        padding: 5rem 1rem 3rem;
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .btn-outline {
+        margin-left: 0;
+    }
+    .contact-container {
+        padding: 2rem;
+    }
+    .quotes-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 10px;
+    }
+    .quote-card {
+        padding: 1.5rem;
+    }
+    .quote-text {
+        font-size: 1rem;
+        padding-left: 1.5rem;
+    }
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav id="navbar">
+<div class="nav-container">
+<a href="#" class="logo">Un Nuovo Giorno</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#autore">Autore</a></li>
+<li><a href="#libro">Il Libro</a></li>
+<li><a href="#citazioni">Citazioni</a></li>
+<li><a href="#contatti">Contatti</a></li>
+</ul>
+<div class="mobile-menu-btn" id="mobileMenuBtn">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="hero-text fade-in">
+<p class="hero-subtitle">Un viaggio interiore di speranza e trasformazione</p>
+<h1 class="hero-title">Un Nuovo Giorno</h1>
+<p class="hero-author">di Davide Ferrero</p>
+<p class="hero-description">
+Il Parkinson nella mia vita, tra una mezzanotte e l'altra.<br>
+Una storia che racconta quanto sia importante alzare lo sguardo<br>
+per non arrendersi mai.
+</p>
+<div class="hero-buttons">
+<a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="btn btn-amazon">Acquista su Amazon</a>
+<a href="#contatti" class="btn btn-outline">Contatta l'Autore</a>
+</div>
+</div>
+<div class="hero-image fade-in">
+<img src="libro.png" alt="Copertina del libro Un Nuovo Giorno" class="book-cover">
+</div>
+</div>
+</section>
+<!-- About Author Section -->
+<section class="about-author" id="autore">
+<div class="section-container">
+<h2 class="section-title fade-in">Chi è Davide Ferrero</h2>
+<p class="section-subtitle fade-in">Un uomo, una storia, un messaggio di speranza</p>
+<div class="author-grid">
+<div class="author-image-container fade-in">
+<img src="davide.jpg" alt="Davide Ferrero" class="author-image">
+</div>
+<div class="author-info fade-in">
+<h3>Davide Ferrero</h3>
+<ul class="author-details">
+<li>Classe: 1982</li>
+<li>Promotore del potere di autoguarigione</li>
+<li>Viaggiatore interiore</li>
+</ul>
+<p class="author-bio">
+Sono cresciuto con l'idea che viviamo in un universo perfetto dove tutto è connesso
+e che siamo qui per uno scopo. Ogni anima imparerà diverse lezioni e insegnerà
+a sua volta agli altri. Non ho mai dubitato di essere venuto al mondo con una missione.
+</p>
+<p class="author-bio">
+"Sono realista – Mi aspetto miracoli."
+</p>
+<a href="#contatti" class="btn">Contattami</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Book Content Section -->
+<section class="book-content" id="libro">
+<div class="section-container">
+<h2 class="section-title fade-in">Il Libro</h2>
+<p class="section-subtitle fade-in">Un percorso di trasformazione interiore</p>
+<div class="content-grid">
+<div class="content-card fade-in">
+<h4>La Storia</h4>
+<p>
+Questa storia inizia con una schiena che si blocca ed un lungo riposo forzato.
+Nell'esistenza tranquilla di Davide c'è un fuoriprogramma: il Parkinson.
+Un viaggio che trasforma la sofferenza in valore.
+</p>
+</div>
+<div class="content-card fade-in">
+<h4>Il Messaggio</h4>
+<p>
+La vera realizzazione e la vera pace non risiedono in una condizione di vita
+senza problemi, ma sono già presenti dentro di noi e possiamo manifestarle
+qui e ora, proprio nella situazione che stiamo vivendo.
+</p>
+</div>
+<div class="content-card fade-in">
+<h4>La Trasformazione</h4>
+<p>
+Il percorso spirituale fa naufragare il corpo e poi lo riporta al benessere.
+Distrugge la casa per dissotterrare il tesoro e con il tesoro la ricostruisce
+migliore di prima.
+</p>
+</div>
+<div class="content-card fade-in">
+<h4>L'Obiettivo</h4>
+<p>
+Ritrovare quella resa profonda, che non è rassegnazione ma accettazione che
+la vita è un mistero. Diventare consapevoli dell'impermanenza di ogni cosa
+e della permanenza della nostra vera natura.
+</p>
+</div>
+<div class="content-card fade-in">
+<h4>La Speranza</h4>
+<p>
+Ho deciso che se non c'è speranza, allora la speranza me la devo creare io,
+nel mio cuore. Non è ancora arrivato il momento di arrendermi.
+Ho deciso di tentare altre vie.
+</p>
+</div>
+<div class="content-card fade-in">
+<h4>Il Nuovo Giorno</h4>
+<p>
+Nella vita possono esserci bufere e notti buie, ma se riesci a superarle,
+più profonda sarà la sofferenza, più splendente sarà la luce del mattino
+della felicità.
+</p>
+</div>
+</div>
+<div style="text-align: center; margin-top: 3rem;">
+<a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="btn btn-amazon fade-in">Acquista Ora su Amazon</a>
+</div>
+</div>
+</section>
+<!-- Quotes Section -->
+<section class="quotes-section" id="citazioni">
+<div class="section-container">
+<h2 class="section-title fade-in">Citazioni Ispiratrici</h2>
+<p class="section-subtitle fade-in">Parole di saggezza che hanno illuminato il percorso</p>
+<div class="quotes-grid">
+<div class="quote-card fade-in">
+<p class="quote-text">
+C'è un piano molto più grande di noi. Tutto ciò che la vita ci presenta fa parte di questo piano,
+è un pezzo del più grande quadro d'insieme che non riusciremo mai a vedere.
+</p>
+<p class="quote-author">Joe Vitale</p>
+<p class="quote-source">Coach e saggista americano</p>
+</div>
+<div class="quote-card fade-in">
+<p class="quote-text">
+Una freccia può essere scagliata solo tirandola prima indietro. Quando la vita ti trascina
+indietro con le difficoltà, significa che ti sta per lanciare in qualcosa di grande.
+</p>
+<p class="quote-author">Dalai Lama</p>
+<p class="quote-source">Leader spirituale del Buddhismo tibetano</p>
+</div>
+<div class="quote-card fade-in">
+<p class="quote-text">
+Nella vita possono esserci bufere e notti buie, ma se riesci a superarle, più profonda
+sarà la sofferenza, più splendente sarà la luce del mattino della felicità.
+</p>
+<p class="quote-author">Daisaku Ikeda</p>
+<p class="quote-source">Filosofo, educatore, maestro buddhista</p>
+</div>
+<div class="quote-card fade-in">
+<p class="quote-text">
+Quando vi arrendete a quello che è, diventando completamente presenti, il passato
+smette di avere alcun potere. E d'improvviso una gran quiete si fa spazio in te.
+</p>
+<p class="quote-author">Eckhart Tolle</p>
+<p class="quote-source">Scrittore e maestro spirituale</p>
+</div>
+<div class="quote-card fade-in">
+<p class="quote-text">
+Sii grato a tutti. Perché tutti stanno creando uno spazio nel quale tu possa trasformarti –
+persino coloro che credono di ostacolarti.
+</p>
+<p class="quote-author">Osho</p>
+<p class="quote-source">Mistico e maestro spirituale indiano</p>
+</div>
+<div class="quote-card fade-in">
+<p class="quote-text">
+Per il debole la difficoltà è una porta chiusa. Per il forte è una porta
+che aspetta di essere aperta.
+</p>
+<p class="quote-author">Almafuerte</p>
+<p class="quote-source">Educatore e poeta argentino</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Target Readers Section -->
+<section class="target-readers">
+<div class="section-container">
+<h2 class="section-title fade-in">A Chi è Rivolto</h2>
+<p class="section-subtitle fade-in">Un messaggio per tutti coloro che cercano speranza</p>
+<div class="readers-grid">
+<div class="reader-card fade-in">
+<h4>Persone con Parkinson</h4>
+<p>
+Per chi vive questa condizione e cerca un percorso di accettazione
+e trasformazione interiore.
+</p>
+</div>
+<div class="reader-card fade-in">
+<h4>Familiari</h4>
+<p>
+Per chi accompagna una persona cara nel suo percorso di malattia
+e cerca comprensione e speranza.
+</p>
+</div>
+<div class="reader-card fade-in">
+<h4>Tutti Noi</h4>
+<p>
+Per le tante persone che vanno di fretta e che Davide nel suo lento
+movimento resiliente incontra casualmente.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section class="testimonial">
+<div class="section-container">
+<div class="testimonial-content fade-in">
+<p class="testimonial-text">
+"Una storia da leggere che racconta a tutti quanto sia importante alzare lo sguardo
+per non arrendersi mai. Questo libro racconta l'esperienza diretta del viaggio interiore
+che Davide ha condotto per arrivare a comprendere che la vera realizzazione, la vera pace,
+non risiedono in una condizione di vita senza problemi, ma sono già presenti dentro di noi."
+</p>
+<p class="testimonial-author">Silvia Arseni</p>
+<p class="testimonial-role">Maestra e Scrittrice</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="cta-section">
+<div class="cta-content fade-in">
+<h2 class="cta-title">Inizia il Tuo Viaggio Oggi</h2>
+<p class="cta-text">
+Scopri la storia di Davide e trova ispirazione per trasformare le tue difficoltà in opportunità di crescita.
+</p>
+<a href="https://amzn.eu/d/02U5Dmoz" target="_blank" class="cta-btn">Acquista su Amazon</a>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="contact" id="contatti">
+<div class="section-container">
+<h2 class="section-title fade-in">Contatti</h2>
+<p class="section-subtitle fade-in">Scrivimi per informazioni o collaborazioni</p>
+<div class="contact-container fade-in">
+<form action="https://formspree.io/f/xdapewwe" method="POST">
+<div class="form-group">
+<label for="name">Nome</label>
+<input type="text" id="name" name="name" class="form-control" required placeholder="Il tuo nome">
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" class="form-control" required placeholder="La tua email">
+</div>
+<div class="form-group">
+<label for="message">Messaggio</label>
+<textarea id="message" name="message" class="form-control" required placeholder="Il tuo messaggio..."></textarea>
+</div>
+<button type="submit" class="submit-btn">Invia Messaggio</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Scroll To Top Button -->
+<div class="scroll-to-top" id="scrollTopBtn" title="Torna su">
+<svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+</div>
+<!-- Footer -->
+<footer>
+<div class="footer-content">
+<div class="footer-logo">Un Nuovo Giorno</div>
+<p class="footer-text">
+Il Parkinson nella mia vita, tra una mezzanotte e l'altra<br>
+di Davide Ferrero
+</p>
+<div class="social-links">
+<!-- YouTube -->
+<a href="https://www.youtube.com/@daveferry82" target="_blank" title="YouTube">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 </a>
+<!-- Facebook -->
+<a href="https://www.facebook.com/share/1FaD3p2ScH/?mibextid=wwXIfr" target="_blank" title="Facebook">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+</a>
+<!-- Instagram -->
+<a href="https://www.instagram.com/davide.ferrero.official?igsh=dXk3eTh3am8xMnRk&utm_source=qr" target="_blank" title="Instagram">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+</a>
+<!-- Email -->
+<a href="mailto:1nuovogiorno@gmail.com" title="Email">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+</a>
+</div>
+<p class="copyright">
+© 2024 Davide Ferrero. Tutti i diritti riservati.<br>
+        <!-- Inizio Codice ShinyStat -->
+<script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=SS-55016673-149e0"></script>
+<noscript>
+<a href="https://www.shinystat.com/it/" target="_top">
+<img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-55016673-149e0" alt="Statistiche accessi" style="border:0px" /></a>
+</noscript>
+<!-- Fine Codice ShinyStat -->
+</p>
+</div>
+</footer>
+<script>
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+mobileMenuBtn.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+});
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+link.addEventListener('click', () => {
+navLinks.classList.remove('active');
+});
+});
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 50) {
+navbar.classList.add('scrolled');
+} else {
+navbar.classList.remove('scrolled');
+}
+});
+// Fade in animation on scroll
+const fadeElements = document.querySelectorAll('.fade-in');
+const fadeInOnScroll = () => {
+fadeElements.forEach(element => {
+const elementTop = element.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+if (elementTop < windowHeight - 100) {
+element.classList.add('visible');
+}
+});
+};
+window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('load', fadeInOnScroll);
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+// Add parallax effect to hero section
+window.addEventListener('scroll', () => {
+const hero = document.querySelector('.hero');
+const scrolled = window.scrollY;
+if (scrolled < hero.offsetHeight) {
+hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+}
+});
+// Scroll To Top Button
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 500) {
+scrollTopBtn.classList.add('visible');
+} else {
+scrollTopBtn.classList.remove('visible');
+}
+});
+scrollTopBtn.addEventListener('click', () => {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+</script>
+
+</body>
+</html>
