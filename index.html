@@ -236,6 +236,68 @@ nav.scrolled {
 .book-cover:hover {
     transform: rotateY(0deg) scale(1.02);
 }
+/* ✅ Testo libreria - Stile base + responsive */
+.testo-libreria {
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.9);
+    font-style: italic;
+    text-align: center;
+    line-height: 1.5;
+    opacity: 0.95;
+    width: 100%;
+}
+.testo-libreria a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255,255,255,0.7);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.testo-libreria a:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+    opacity: 1;
+}
+/* Per sezioni con sfondo chiaro */
+.light-bg .testo-libreria {
+    color: var(--text-light);
+}
+.light-bg .testo-libreria a {
+    color: var(--text-light);
+    border-bottom-color: var(--accent-color);
+}
+.light-bg .testo-libreria a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+/* Per CTA section con sfondo arancione */
+.cta-section .testo-libreria {
+    color: #333;
+}
+.cta-section .testo-libreria a {
+    color: #333;
+    border-bottom-color: #111;
+}
+.cta-section .testo-libreria a:hover {
+    color: #111;
+    border-bottom-color: #111;
+}
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .testo-libreria {
+        font-size: 1.15rem;
+        margin-top: 0.8rem;
+        padding: 0 0.5rem;
+    }
+}
+@media (max-width: 480px) {
+    .testo-libreria {
+        font-size: 1.15rem;
+        margin-top: 0.7rem;
+        line-height: 1.4;
+    }
+}
 /* About Author Section */
 .about-author {
     padding: 6rem 2rem;
@@ -787,7 +849,6 @@ footer {
     }
 }
 
-    
 /* ← AGGIUNGI QUESTI STILI */
 .btn-with-icon {
     display: inline-flex;
@@ -809,8 +870,6 @@ footer {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(233, 110, 0, 0.4);
 }
-
-
 </style>
 </head>
 <body>
@@ -862,6 +921,12 @@ per non arrendersi mai.
     </a>
 </div>
     
+    <!-- ✅ Testo libreria con link a Google Maps -->
+    <p class="testo-libreria">
+      
+            Oppure potrai recarti in libreria ed ordinare la tua copia!
+        
+    </p>
 </div>
 <div class="hero-image fade-in">
 <img src="libro.png" alt="Copertina del libro Un Nuovo Giorno" class="book-cover">
@@ -898,7 +963,7 @@ a sua volta agli altri. Non ho mai dubitato di essere venuto al mondo con una mi
 </div>
 </section>
 <!-- Book Content Section -->
-<section class="book-content" id="libro">
+<section class="book-content light-bg" id="libro">
 <div class="section-container">
 <h2 class="section-title fade-in">Il Libro</h2>
 <p class="section-subtitle fade-in">Un percorso di trasformazione interiore</p>
@@ -969,6 +1034,11 @@ della felicità.
         Ascolta su Audible
     </a>
 </div>
+<!-- ✅ Testo libreria con link a Google Maps -->
+<p class="testo-libreria fade-in">
+        Oppure potrai recarti in libreria ed ordinare la tua copia!
+    
+</p>
 </div>
 </section>
 <!-- Quotes Section -->
@@ -1029,7 +1099,7 @@ che aspetta di essere aperta.
 </div>
 </section>
 <!-- Target Readers Section -->
-<section class="target-readers">
+<section class="target-readers light-bg">
 <div class="section-container">
 <h2 class="section-title fade-in">A Chi è Rivolto</h2>
 <p class="section-subtitle fade-in">Un messaggio per tutti coloro che cercano speranza</p>
@@ -1087,7 +1157,13 @@ Scopri la storia di Davide e trova ispirazione per trasformare le tue difficolt�
     <a href="https://www.audible.it/pd/B0GY975RJP?qid=1777014505&sr=1-1&ref_pageloadid=not_applicable&pf_rd_p=67f8f22b-aed1-45a6-a456-d09beff03315&pf_rd_r=MDTJW2D78ARR76GQGJQW&plink=8AO6UHjsuPVoficf&pageLoadId=mnUFZfU3GTWdo6zc&creativeId=b2592cc9-1111-40d9-9474-98f67c8075cc&ref=a_search_c3_lProduct_1_1" target="_blank" class="cta-btn" style="background: var(--audible-color);">
         Ascolta su Audible
     </a>
+    <p class="testo-libreria fade-in">
+        Oppure potrai recarti in libreria ed ordinare la tua copia!
+    
+</p>
+
 </div>
+
 
 </div>
 </section>
